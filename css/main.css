@@ -363,7 +363,28 @@ th {
 body {
   font-family: "Lato", Helvetica, sans-serif; }
 
+img {
+  width: 100%; }
+
 .wrapper {
   max-width: 960px;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
+
+.text-blurb {
+  text-align: center; }
+
+.site-map {
+  background-image: url("../assets/site-map-bkg.png");
+  display: flex;
+  flex-wrap: wrap; }
+
+.site-map div {
+  padding: 20px;
+  background: #000;
+  color: #fff;
+  width: 20%; }
+
+.company-logos {
+  display: flex; }

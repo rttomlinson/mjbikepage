@@ -14,8 +14,38 @@ body {
 }
 
 
+img {
+    width: 100%;
+}
+
+
 .wrapper {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+}
+
+.top-section-biker {
+}
+
+.text-blurb {
+    text-align: center;
+}
+
+.site-map{
+    background-image: url("../assets/site-map-bkg.png");
+    display: flex;
+    flex-wrap: wrap;
+    div {
+        padding: 20px;
+        background: #000;
+        color: #fff;
+        width: 20%;
+    }
+}
+
+.company-logos {
+    display: flex;
+    
 }

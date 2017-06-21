@@ -3,7 +3,7 @@
 3. Install Sass
 4. Break apart mock
 5. Ask questions about browser support, psd
-6. 
+6. Add fonts
 
 
 
