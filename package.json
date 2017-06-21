@@ -1,0 +1,15 @@
+{
+  "name": "mjassignment",
+  "version": "1.0.0",
+  "description": "Moosejaw Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "node-sass css/ --output css/ --watch"
+  },
+  "author": "Renzo Tomlinson",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.scss": "^0.1.0"
+  }
+}
