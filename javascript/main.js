@@ -36,7 +36,7 @@ $(document).ready(function() {
     //attached event listener to slider-next button
     
     /*********************
-     * Attach lister listeners
+     * Attach slider listeners
      *********************/
     
     $('.slider-next').click(function() {
@@ -85,6 +85,12 @@ $(document).ready(function() {
 
             });
     });
+    
+    
+    $(".slider-button").click(function() {
+        console.log("moving to specific slide!");
+    });
+    
     
     /**********************
      * Helpers

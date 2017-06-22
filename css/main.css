@@ -463,7 +463,13 @@ footer .company-logos > div {
 .slider-header .slider-button {
   width: 25px;
   height: 25px;
-  position: absolute; }
+  position: absolute;
+  transition: .5s; }
+
+.slider-header .slider-button:hover {
+  -webkit-box-shadow: 0px 0px 61px 18px white;
+  -moz-box-shadow: 0px 0px 61px 18px white;
+  box-shadow: 0px 0px 61px 18px white; }
 
 /*
 let startingCoords = [520, 799]
