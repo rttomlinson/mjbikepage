@@ -12,33 +12,29 @@ function whichTransitionEvent() {
         }
     }
 }
-
 const transEndEventName = whichTransitionEvent();
 
 $(document).ready(function() {
     console.log("ready!");
-    
+
     /***********************
      * Set initial state of slider
      ***********************/
-    
-    
+
+
     //Testing only. Remove for production
     let imageUrls = ["assets/smith-helmet-1500x1000.png", "assets/gopro-camera.jpg", "assets/lezyne-tool.jpg"];
     //End testing only
-    
-    
-    
-    
+
     let currentSlidePosition = 0;
     //should pull this from the initial load
     let currentSliderOffset = -25;
     //attached event listener to slider-next button
-    
+
     /*********************
      * Attach slider listeners
      *********************/
-    
+
     $('.slider-next').click(function() {
         ++currentSlidePosition;
         currentSliderOffset -= 50;
@@ -49,10 +45,10 @@ $(document).ready(function() {
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
-                
+
                 //change url reference of the presentationSlide, pull off corresponding active-slide
                 $($presentationalSlide.children("img")[0]).attr("src", imageUrls[currentSlidePosition]);
-                
+
                 setTranslateX($slides, currentSliderOffset);
             });
         $slides.one(transEndEventName,
@@ -63,7 +59,7 @@ $(document).ready(function() {
 
             });
     });
-    
+
     $('.slider-prev').click(function() {
         --currentSlidePosition;
         currentSliderOffset += 50;
@@ -85,13 +81,36 @@ $(document).ready(function() {
 
             });
     });
-    
-    
-    $(".slider-button").click(function() {
-        console.log("moving to specific slide!");
+
+
+    $(".slider-button").click(function(e) {
+        console.log("moving to specific slide!", this.getAttribute('data-slideNum'));
+        let nextSlidePosition = this.getAttribute('data-slideNum');
+        if (nextSlidePosition === currentSlidePosition) {
+            return;
+        }
+        currentSlidePosition = nextSlidePosition;
+        currentSliderOffset = -25 + (currentSlidePosition * -50);
+        //grab the .slider, pull the data value off of the item, multiply the translation
+        let $slides = $('.slides');
+        let $presentationalSlide = $('.presentational-slide');
+        //reduce the side of the presentationalSlide
+        fadeOutPresentationalSlide();
+        $presentationalSlide.one(transEndEventName,
+            function(e) {
+                console.log("firing transform of presentational slide done", e);
+                setTranslateX($slides, currentSliderOffset);
+            });
+        $slides.one(transEndEventName,
+            function(e) {
+                console.log("transform of slides translate done", e);
+                //fade new presentational slide in
+                fadeInPresentationalSlide();
+
+            });
     });
-    
-    
+
+
     /**********************
      * Helpers
      **********************/
@@ -100,6 +119,7 @@ $(document).ready(function() {
             transform: `translateX(${position}%)`
         });
     }
+
     function fadeOutPresentationalSlide() {
         //fade out the current slide and reduce scale
         return new Promise((resolve, reject) => {
@@ -109,6 +129,7 @@ $(document).ready(function() {
             });
         });
     }
+
     function fadeInPresentationalSlide() {
         //fade in the current slide and increase scale
         $(".presentational-slide").css({
@@ -117,6 +138,3 @@ $(document).ready(function() {
         });
     }
 });
-
-
-
