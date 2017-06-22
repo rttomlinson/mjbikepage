@@ -364,6 +364,10 @@ th {
   font-family: 'Lato-Light';
   src: url("../fonts/Lato/Lato-Light.ttf") format("truetype"); }
 
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url("../fonts/Lato/Lato-Bold.ttf") format("truetype"); }
+
 * {
   box-sizing: border-box; }
 
@@ -382,6 +386,24 @@ section {
   width: 100%;
   margin: 0 auto;
   position: relative; }
+
+.top-section-biker {
+  position: relative; }
+
+.top-section-biker .top-section-button-wrapper {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  top: 80%; }
+
+.top-section-biker .top-section-button-wrapper .top-section-button {
+  font-family: "Lato-Bold", Helvetica, sans-serif;
+  padding: 10px 40px;
+  background: #000;
+  opacity: 0.6;
+  color: white;
+  border: 3px solid #fff; }
 
 .text-blurb {
   text-align: center; }
