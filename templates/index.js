@@ -1,12 +1,19 @@
 const Handlebars = require('handlebars');
+Handlebars.registerHelper('each', function(context, options) {
+  var ret = "";
+    console.log("context", context);
+  for(var i=0, j=context.length; i<j; i++) {
+    ret = ret + options.fn(context[i]);
+  }
 
-var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-             "{{kids.length}} kids:</p>" +
-             "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
+  return ret;
+});
+var source = "<p>{{#each boxCoords}}<p>Next Box</p>{{/each}}</p>";
+//var source = "<p>{{boxCoords}}<p>Next Box</p></p>";
 var template = Handlebars.compile(source);
  
-var data = { "name": "Alan", "hometown": "Somewhere, TX",
-             "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
+var data = { "boxCoords": [[52.5,35],[63.13,27.29],[66.67,43.86],[74.17,45.86],[79.79,52.14],[52.81,61.71],[64.69,81.14],[26.77,51.57],[24.69,5.14],[19.48,16.86],[34.48,11.29],[28.23,26.29],[10.42,29],[19.48,37.71]]};
+
 var result = template(data);
 
 console.log(result);
