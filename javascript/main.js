@@ -24,7 +24,7 @@ $(document).ready(function() {
     
     
     //Testing only. Remove for production
-    let imageUrls = ["assets/smith-helmet-1500x1000.png", "assets/gopro-camera.png", "assets/lezyne-tool.png"];
+    let imageUrls = ["assets/smith-helmet-1500x1000.png", "assets/gopro-camera.jpg", "assets/lezyne-tool.jpg"];
     //End testing only
     
     
@@ -49,6 +49,10 @@ $(document).ready(function() {
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
+                
+                //change url reference of the presentationSlide, pull off corresponding active-slide
+                $($presentationalSlide.children("img")[0]).attr("src", imageUrls[currentSlidePosition]);
+                
                 setTranslateX($slides, currentSliderOffset);
             });
         $slides.one(transEndEventName,
