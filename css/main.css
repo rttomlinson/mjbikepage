@@ -486,12 +486,11 @@ footer .company-logos > div {
   width: 25px;
   height: 25px;
   position: absolute;
-  transition: .5s; }
+  background-image: url(../assets/info-btn.png);
+  background-size: contain; }
 
 .slider-header .slider-button:hover {
-  -webkit-box-shadow: 0px 0px 61px 18px white;
-  -moz-box-shadow: 0px 0px 61px 18px white;
-  box-shadow: 0px 0px 61px 18px white; }
+  background-image: url(../assets/info-btn-hvr.png); }
 
 /*
 let startingCoords = [520, 799]
