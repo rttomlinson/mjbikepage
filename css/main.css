@@ -420,7 +420,7 @@ footer .company-logos > div {
 
 .slider-container .slider-viewer .slides {
   transform: translateX(-25%);
-  transition: 2s;
+  transition: 1s;
   position: absolute;
   display: flex; }
 
@@ -446,7 +446,8 @@ footer .company-logos > div {
   top: 0;
   width: 50%;
   left: 25%;
-  transform: scale(1.025); }
+  transform: scale(1.025);
+  transition: .5s; }
 
 .presentational-slide .descriptor-overlay {
   text-align: center;
