@@ -22,9 +22,8 @@ $(document).ready(function() {
      ***********************/
 
 
-    //Testing only. Remove for production
-    let imageUrls = ["assets/smith-helmet-1500x1000.png", "assets/gopro-camera.jpg", "assets/lezyne-tool.jpg"];
-    //End testing only
+    let slides = ["assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png"];
+    let lastSlide = slides.length - 1;
 
     let currentSlidePosition = 0;
     //should pull this from the initial load
@@ -36,6 +35,9 @@ $(document).ready(function() {
      *********************/
 
     $('.slider-next').click(function() {
+        if (currentSlidePosition === lastSlide) {
+            return;
+        }
         ++currentSlidePosition;
         currentSliderOffset -= 50;
         let $slides = $('.slides');
@@ -47,7 +49,7 @@ $(document).ready(function() {
                 console.log("firing transform of presentational slide done", e);
 
                 //change url reference of the presentationSlide, pull off corresponding active-slide
-                $($presentationalSlide.children("img")[0]).attr("src", imageUrls[currentSlidePosition]);
+                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
 
                 setTranslateX($slides, currentSliderOffset);
             });
@@ -71,6 +73,8 @@ $(document).ready(function() {
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
+                //change url reference of the presentationSlide, pull off corresponding active-slide
+                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
                 setTranslateX($slides, currentSliderOffset);
             });
         $slides.one(transEndEventName,
@@ -99,6 +103,8 @@ $(document).ready(function() {
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
+                //change url reference of the presentationSlide, pull off corresponding active-slide
+                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
                 setTranslateX($slides, currentSliderOffset);
             });
         $slides.one(transEndEventName,

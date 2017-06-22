@@ -20,6 +20,7 @@ sans-serif;
 $font-stack-bold: 'Lato-Bold',
 Helvetica,
 sans-serif;
+$slider-arrow-top-offset: 50%;
 * {
     box-sizing: border-box;
 }
@@ -98,7 +99,7 @@ footer {
     position: relative;
     .slider-viewer {
         position: relative;
-        height: 320px;
+        height: 285px;
         overflow: hidden;
         .slides {
             transform: translateX(-25%);
@@ -124,6 +125,22 @@ footer {
             }
         }
     }
+    .slider-button {
+        top: $slider-arrow-top-offset;
+        position: absolute;
+        color: #fff;
+        font-size: 3.0em;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .next-slider-button {
+        @extend .slider-button;
+        right: 0;
+    }
+    .prev-slider-button {
+        @extend .slider-button;
+    }
 }
 
 .presentational-slide {
@@ -145,7 +162,7 @@ footer {
 
 .slider-header {
     position: relative;
-    .slider-button {
+    .plus-slider-button {
         width: 25px;
         height: 25px;
         position: absolute;

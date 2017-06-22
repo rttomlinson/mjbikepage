@@ -437,7 +437,7 @@ footer .company-logos > div {
 
 .slider-container .slider-viewer {
   position: relative;
-  height: 320px;
+  height: 285px;
   overflow: hidden; }
 
 .slider-container .slider-viewer .slides {
@@ -463,6 +463,18 @@ footer .company-logos > div {
   color: white;
   visibility: hidden; }
 
+.slider-container .slider-button, .slider-container .next-slider-button, .slider-container .prev-slider-button {
+  top: 50%;
+  position: absolute;
+  color: #fff;
+  font-size: 3.0em; }
+
+.slider-container .slider-button:hover, .slider-container .next-slider-button:hover, .slider-container .prev-slider-button:hover {
+  cursor: pointer; }
+
+.slider-container .next-slider-button {
+  right: 0; }
+
 .presentational-slide {
   position: absolute;
   top: 0;
@@ -482,14 +494,14 @@ footer .company-logos > div {
 .slider-header {
   position: relative; }
 
-.slider-header .slider-button {
+.slider-header .plus-slider-button {
   width: 25px;
   height: 25px;
   position: absolute;
   background-image: url(../assets/info-btn.png);
   background-size: contain; }
 
-.slider-header .slider-button:hover {
+.slider-header .plus-slider-button:hover {
   background-image: url(../assets/info-btn-hvr.png); }
 
 /*
