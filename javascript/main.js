@@ -113,8 +113,4 @@ $(document).ready(function() {
 });
 
 
-function makeToPercents(arr) {
-    return arr.map((coord) => {
-        return [(960 / coord[0]) * 100, (700 / coord[1]) * 100]
-    })
-}
+

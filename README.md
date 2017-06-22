@@ -16,3 +16,4 @@ To-Do:
 * Something like ImageMagik
 * Explore Shims and Polyfills as necessary
 * Modernizer?
+* Reposition individual slide buttons with calc in sass
