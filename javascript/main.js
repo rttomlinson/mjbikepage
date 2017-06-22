@@ -87,7 +87,7 @@ $(document).ready(function() {
     });
 
 
-    $(".slider-button").click(function(e) {
+    $(".plus-slider-button").click(function(e) {
         console.log("moving to specific slide!", this.getAttribute('data-slideNum'));
         let nextSlidePosition = this.getAttribute('data-slideNum');
         if (nextSlidePosition === currentSlidePosition) {

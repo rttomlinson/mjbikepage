@@ -13,7 +13,9 @@
     font-family: 'Lato-Bold';
     src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
 }
-
+$font-stack-reg : 'Lato',
+Helvetica,
+sans-serif;
 $font-stack-light: 'Lato-Light',
 Helvetica,
 sans-serif;
@@ -54,7 +56,7 @@ section {
         justify-content: space-around;
         top: 80%;
         .top-section-button {
-            font-family: $font-stack-bold;
+            font-family: $font-stack-light;
             padding: 10px 40px;
             background: #000;
             opacity: 0.6;
@@ -66,6 +68,16 @@ section {
 
 .text-blurb {
     text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    h1 {
+        margin: 0;
+        font-family: $font-stack-light;
+        font-size: 3.0em;
+    }
+    p {
+        padding: 0 110px 40px 110px;
+    }
 }
 
 footer {
@@ -74,6 +86,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         padding: 20px;
+        font-size: 0.8em;
         .site-button {
             text-align: center;
             padding: 10px 20px;

@@ -398,7 +398,7 @@ section {
   top: 80%; }
 
 .top-section-biker .top-section-button-wrapper .top-section-button {
-  font-family: "Lato-Bold", Helvetica, sans-serif;
+  font-family: "Lato-Light", Helvetica, sans-serif;
   padding: 10px 40px;
   background: #000;
   opacity: 0.6;
@@ -406,13 +406,24 @@ section {
   border: 3px solid #fff; }
 
 .text-blurb {
-  text-align: center; }
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px; }
+
+.text-blurb h1 {
+  margin: 0;
+  font-family: "Lato-Light", Helvetica, sans-serif;
+  font-size: 3.0em; }
+
+.text-blurb p {
+  padding: 0 110px 40px 110px; }
 
 footer .site-map {
   background-image: url("../assets/site-map-bkg.png");
   display: flex;
   flex-wrap: wrap;
-  padding: 20px; }
+  padding: 20px;
+  font-size: 0.8em; }
 
 footer .site-map .site-button {
   text-align: center;
