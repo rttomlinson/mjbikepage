@@ -161,7 +161,8 @@ footer {
     top: 0;
     width: 50%;
     left: 25%;
-    transform: scale(1.025);
+    transform: scale(1.0);
+    opacity: 0;
     transition: .5s;
     .descriptor-overlay {
         text-align: center;
@@ -170,6 +171,10 @@ footer {
         background-color: black;
         opacity: 0.4;
         color: white;
+    }
+    &.active-presentational-slide{
+        transform: scale(1.025);
+        opacity: 1.0;
     }
 }
 

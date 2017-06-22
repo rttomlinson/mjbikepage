@@ -43,7 +43,7 @@ $(document).ready(function() {
         let $slides = $('.slides');
         let $presentationalSlide = $('.presentational-slide');
         //reduce the side of the presentationalSlide
-        fadeOutPresentationalSlide();
+        togglePresentationalSlide();
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
@@ -57,7 +57,7 @@ $(document).ready(function() {
             function(e) {
                 console.log("transform of slides translate done", e);
                 //fade new presentational slide in
-                fadeInPresentationalSlide();
+                togglePresentationalSlide();
 
             });
     });
@@ -69,7 +69,7 @@ $(document).ready(function() {
         let $slides = $('.slides');
         let $presentationalSlide = $('.presentational-slide');
         //reduce the side of the presentationalSlide
-        fadeOutPresentationalSlide();
+        togglePresentationalSlide();
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
@@ -81,7 +81,7 @@ $(document).ready(function() {
             function(e) {
                 console.log("transform of slides translate done", e);
                 //fade new presentational slide in
-                fadeInPresentationalSlide();
+                togglePresentationalSlide();
 
             });
     });
@@ -99,7 +99,7 @@ $(document).ready(function() {
         let $slides = $('.slides');
         let $presentationalSlide = $('.presentational-slide');
         //reduce the side of the presentationalSlide
-        fadeOutPresentationalSlide();
+        togglePresentationalSlide();
         $presentationalSlide.one(transEndEventName,
             function(e) {
                 console.log("firing transform of presentational slide done", e);
@@ -111,7 +111,7 @@ $(document).ready(function() {
             function(e) {
                 console.log("transform of slides translate done", e);
                 //fade new presentational slide in
-                fadeInPresentationalSlide();
+                togglePresentationalSlide();
 
             });
     });
@@ -126,21 +126,10 @@ $(document).ready(function() {
         });
     }
 
-    function fadeOutPresentationalSlide() {
+    function togglePresentationalSlide() {
         //fade out the current slide and reduce scale
         return new Promise((resolve, reject) => {
-            $(".presentational-slide").css({
-                transform: "scale(1.0)",
-                opacity: 0
-            });
-        });
-    }
-
-    function fadeInPresentationalSlide() {
-        //fade in the current slide and increase scale
-        $(".presentational-slide").css({
-            transform: "scale(1.025)",
-            opacity: 1.0
+            $(".presentational-slide").toggleClass('active-presentational-slide');
         });
     }
 });
