@@ -62,7 +62,7 @@ var slide = `{{#eachSlide slidesData}}<div class="slide-wrapper" data-slidePosit
                             </div>
                         </div>{{/eachSlide}}`;
 var slideTemplate = Handlebars.compile(slide);
-let helmetInfo = "As classical as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a Ladylike polish and style.";
+let helmetInfo = "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style.";
 var slideData = {
   "slidesData": [{
     src: "assets/smith-helmet-show.png",
