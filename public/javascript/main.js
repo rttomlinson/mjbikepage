@@ -20,8 +20,6 @@ $(document).ready(function() {
     /***********************
      * Set initial state of slider
      ***********************/
-
-
     let slides = ["assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png"];
     let lastSlide = slides.length - 1;
 
@@ -29,91 +27,86 @@ $(document).ready(function() {
     //should pull this from the initial load
     let currentSliderOffset = -25;
     //attached event listener to slider-next button
+    let transitionActive = false;
+    let $slides = $('.slides');
+    let $presentationalSlide = $('.presentational-slide');
 
     /*********************
      * Attach slider listeners
      *********************/
 
     $('.slider-next').click(function() {
-        if (currentSlidePosition === lastSlide) {
+        if (currentSlidePosition === lastSlide || transitionActive) {
             return;
         }
+        transitionActive = true;
         ++currentSlidePosition;
         currentSliderOffset -= 50;
-        let $slides = $('.slides');
-        let $presentationalSlide = $('.presentational-slide');
-        //reduce the side of the presentationalSlide
-        togglePresentationalSlide();
-        $presentationalSlide.one(transEndEventName,
-            function(e) {
-                console.log("firing transform of presentational slide done", e);
 
-                //change url reference of the presentationSlide, pull off corresponding active-slide
-                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
-
-                setTranslateX($slides, currentSliderOffset);
-            });
-        $slides.one(transEndEventName,
-            function(e) {
-                console.log("transform of slides translate done", e);
-                //fade new presentational slide in
+        addListenerForPresentationSlideFade()
+            .then(() => {
+                changePresentationalSlideImage();
+                moveSlider();
+                return addListenerForSlideTransitionFinish();
+            })
+            .then(() => {
                 togglePresentationalSlide();
-
+                return addListenerForPresentationSlideFade();
+            })
+            .then(() => {
+                transitionActive = false;
             });
+        togglePresentationalSlide();
+
     });
 
     $('.slider-prev').click(function() {
+        if (currentSlidePosition === 0 || transitionActive) {
+            return;
+        }
+        transitionActive = true;
         --currentSlidePosition;
         currentSliderOffset += 50;
-        //grab the .slider, pull the data value off of the item, multiply the translation
-        let $slides = $('.slides');
-        let $presentationalSlide = $('.presentational-slide');
-        //reduce the side of the presentationalSlide
-        togglePresentationalSlide();
-        $presentationalSlide.one(transEndEventName,
-            function(e) {
-                console.log("firing transform of presentational slide done", e);
-                //change url reference of the presentationSlide, pull off corresponding active-slide
-                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
-                setTranslateX($slides, currentSliderOffset);
-            });
-        $slides.one(transEndEventName,
-            function(e) {
-                console.log("transform of slides translate done", e);
-                //fade new presentational slide in
+        addListenerForPresentationSlideFade()
+            .then(() => {
+                changePresentationalSlideImage();
+                moveSlider();
+                return addListenerForSlideTransitionFinish();
+            })
+            .then(() => {
                 togglePresentationalSlide();
-
+                return addListenerForPresentationSlideFade();
+            })
+            .then(() => {
+                transitionActive = false;
             });
+        togglePresentationalSlide();
+
     });
 
 
     $(".plus-slider-button").click(function(e) {
-        console.log("moving to specific slide!", this.getAttribute('data-slideNum'));
         let nextSlidePosition = this.getAttribute('data-slideNum');
-        if (nextSlidePosition === currentSlidePosition) {
+        if (currentSlidePosition === nextSlidePosition || transitionActive) {
             return;
         }
+        transitionActive = true;
         currentSlidePosition = nextSlidePosition;
         currentSliderOffset = -25 + (currentSlidePosition * -50);
-        //grab the .slider, pull the data value off of the item, multiply the translation
-        let $slides = $('.slides');
-        let $presentationalSlide = $('.presentational-slide');
-        //reduce the side of the presentationalSlide
-        togglePresentationalSlide();
-        $presentationalSlide.one(transEndEventName,
-            function(e) {
-                console.log("firing transform of presentational slide done", e);
-                //change url reference of the presentationSlide, pull off corresponding active-slide
-                $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
-                setTranslateX($slides, currentSliderOffset);
-            });
-        $slides.one(transEndEventName,
-            function(e) {
-                console.log("transform of slides translate done", e);
-                //fade new presentational slide in
+        addListenerForPresentationSlideFade()
+            .then(() => {
+                changePresentationalSlideImage();
+                moveSlider();
+                return addListenerForSlideTransitionFinish();
+            })
+            .then(() => {
                 togglePresentationalSlide();
-
+                return addListenerForPresentationSlideFade();
+            })
+            .then(() => {
+                transitionActive = false;
             });
+        togglePresentationalSlide();
     });
 
 
@@ -126,10 +119,30 @@ $(document).ready(function() {
         });
     }
 
+    function changePresentationalSlideImage(e) {
+        //change url reference of the presentationSlide, pull off corresponding active-slide
+        $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
+    }
+
+    function moveSlider(e) {
+        setTranslateX($slides, currentSliderOffset);
+    }
+
     function togglePresentationalSlide() {
         //fade out the current slide and reduce scale
+        $(".presentational-slide").toggleClass('active-presentational-slide');
+    }
+
+    function addListenerForPresentationSlideFade() {
         return new Promise((resolve, reject) => {
-            $(".presentational-slide").toggleClass('active-presentational-slide');
+            $presentationalSlide.one(transEndEventName, resolve);
         });
     }
+
+    function addListenerForSlideTransitionFinish() {
+        return new Promise((resolve, reject) => {
+            $slides.one(transEndEventName, resolve);
+        });
+    }
+
 });
