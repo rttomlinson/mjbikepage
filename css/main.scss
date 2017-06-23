@@ -62,15 +62,18 @@ section {
             color: white;
             border: 3px solid #fff;
             position: relative;
+            >div{
+                position: relative;
+            }
             &::before {
-                background: #000;
+                background: black;
                 content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
                 height: 100%;
                 width: 100%;
                 opacity: 0.6;
+                top: 0;
+                left: 0;
+                position: absolute;
             }
         }
     }
@@ -183,7 +186,7 @@ footer {
         position: absolute;
         bottom: 0;
         color: white;
-        &::before{
+        &::before {
             background: black;
             content: "";
             height: 100%;

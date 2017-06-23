@@ -404,15 +404,18 @@ section {
   border: 3px solid #fff;
   position: relative; }
 
+.top-section-biker .top-section-button-wrapper .top-section-button > div {
+  position: relative; }
+
 .top-section-biker .top-section-button-wrapper .top-section-button::before {
-  background: #000;
+  background: black;
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.6; }
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  position: absolute; }
 
 .text-blurb {
   text-align: center;
