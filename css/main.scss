@@ -24,6 +24,10 @@ $font-stack-bold: 'Lato-Bold',
 Helvetica,
 sans-serif;
 $slider-arrow-top-offset: 50%;
+$max-width: 960px;
+//Top section variables
+$top-button-max-width: 270px;
+$top-button-ratio: $top-button-max-width / $max-width * 100 * 1%;
 * {
     box-sizing: border-box;
 }
@@ -54,19 +58,22 @@ section {
         position: absolute;
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         top: 80%;
         .top-section-button {
+            text-align: center;
+            width: $top-button-ratio;
             font-family: $font-stack-light;
             padding: 10px 40px;
-            color: white;
+            color: #fff;
             border: 3px solid #fff;
             position: relative;
-            >div{
+            >div {
                 position: relative;
             }
             &::before {
-                background: black;
+                background: #000;
                 content: "";
                 height: 100%;
                 width: 100%;
@@ -75,6 +82,17 @@ section {
                 left: 0;
                 position: absolute;
             }
+            &.trail-blazer {
+                order: 0;
+            }
+            &.commuter {
+                order: 2;
+            }
+        }
+        .t-divider {
+            position: relative;
+            order: 1;
+            transform: translateY(-50%);
         }
     }
 }
@@ -143,7 +161,7 @@ footer {
                     text-align: center;
                     position: absolute;
                     bottom: 0;
-                    background-color: black;
+                    background-color: #000;
                     opacity: 0.4;
                     color: white;
                     visibility: hidden;
@@ -185,7 +203,7 @@ footer {
         text-align: center;
         position: absolute;
         bottom: 0;
-        color: white;
+        color: #fff;
         &::before {
             background: black;
             content: "";
@@ -230,6 +248,24 @@ footer {
     }
 }
 
+// &::before {
+//     content: "";
+//     position: absolute;
+//     border-top: 4px solid #fff;
+//     border-right: 4px solid #fff;
+//     left: 50%;
+//     width: 15%;
+//     height: 100%;
+// }
+// &::after {
+//     content: "";
+//     position: absolute;
+//     border-left: 4px solid #fff;
+//     border-top: 4px solid #fff;
+//     left: 50%;
+//     width: 15%;
+//     height: 100%;
+// }
 
 /*
 let startingCoords = [520, 799]
