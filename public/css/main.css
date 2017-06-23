@@ -550,8 +550,16 @@ footer .company-logos {
     position: absolute;
     background-image: url(../assets/info-btn.png);
     background-size: contain; }
+    .slider-header .plus-slider-button .slide-title {
+      white-space: nowrap;
+      background-color: #fff;
+      position: absolute;
+      display: none;
+      top: 100%; }
     .slider-header .plus-slider-button:hover {
       background-image: url(../assets/info-btn-hvr.png); }
+      .slider-header .plus-slider-button:hover .slide-title {
+        display: block; }
     .slider-header .plus-slider-button::after {
       content: "";
       background-image: url(../assets/info-btn-hvr.png);

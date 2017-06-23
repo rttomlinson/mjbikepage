@@ -22,7 +22,6 @@ $(document).ready(function() {
      ***********************/
     let slides = ["assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png"];
     let lastSlide = slides.length - 1;
-
     let currentSlidePosition = 0;
     //should pull this from the initial load
     let currentSliderOffset = -25;
@@ -42,24 +41,9 @@ $(document).ready(function() {
         transitionActive = true;
         ++currentSlidePosition;
         currentSliderOffset -= 50;
-
-        addListenerForPresentationSlideFade()
-            .then(() => {
-                changePresentationalSlideImage();
-                moveSlider();
-                return addListenerForSlideTransitionFinish();
-            })
-            .then(() => {
-                togglePresentationalSlide();
-                return addListenerForPresentationSlideFade();
-            })
-            .then(() => {
-                transitionActive = false;
-            });
-        togglePresentationalSlide();
+        moveToNewSlide();
 
     });
-
     $('.slider-prev').click(function() {
         if (currentSlidePosition === 0 || transitionActive) {
             return;
@@ -67,46 +51,20 @@ $(document).ready(function() {
         transitionActive = true;
         --currentSlidePosition;
         currentSliderOffset += 50;
-        addListenerForPresentationSlideFade()
-            .then(() => {
-                changePresentationalSlideImage();
-                moveSlider();
-                return addListenerForSlideTransitionFinish();
-            })
-            .then(() => {
-                togglePresentationalSlide();
-                return addListenerForPresentationSlideFade();
-            })
-            .then(() => {
-                transitionActive = false;
-            });
-        togglePresentationalSlide();
+        moveToNewSlide();
 
     });
 
-
     $(".plus-slider-button").click(function(e) {
         let nextSlidePosition = this.getAttribute('data-slideNum');
-        if (currentSlidePosition === nextSlidePosition || transitionActive) {
+        if (currentSlidePosition == nextSlidePosition || transitionActive) {
             return;
         }
         transitionActive = true;
         currentSlidePosition = nextSlidePosition;
         currentSliderOffset = -25 + (currentSlidePosition * -50);
-        addListenerForPresentationSlideFade()
-            .then(() => {
-                changePresentationalSlideImage();
-                moveSlider();
-                return addListenerForSlideTransitionFinish();
-            })
-            .then(() => {
-                togglePresentationalSlide();
-                return addListenerForPresentationSlideFade();
-            })
-            .then(() => {
-                transitionActive = false;
-            });
-        togglePresentationalSlide();
+        moveToNewSlide();
+        
     });
 
 
@@ -143,6 +101,23 @@ $(document).ready(function() {
         return new Promise((resolve, reject) => {
             $slides.one(transEndEventName, resolve);
         });
+    }
+    
+    function moveToNewSlide() {
+        addListenerForPresentationSlideFade()
+            .then(() => {
+                changePresentationalSlideImage();
+                moveSlider();
+                return addListenerForSlideTransitionFinish();
+            })
+            .then(() => {
+                togglePresentationalSlide();
+                return addListenerForPresentationSlideFade();
+            })
+            .then(() => {
+                transitionActive = false;
+            });
+        togglePresentationalSlide();
     }
 
 });

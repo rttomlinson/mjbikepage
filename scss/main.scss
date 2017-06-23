@@ -259,8 +259,18 @@ footer {
         position: absolute;
         background-image: url(../assets/info-btn.png);
         background-size: contain;
+        .slide-title {
+            white-space: nowrap;
+            background-color: #fff;
+            position: absolute;
+            display: none;
+            top: 100%;
+        }
         &:hover {
             background-image: url(../assets/info-btn-hvr.png);
+            .slide-title {
+                display: block;
+            }
         }
         &::after {
             //preload hover image
