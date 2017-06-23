@@ -29,6 +29,10 @@ $max-width: 960px;
 //Top section variables
 $top-button-max-width: 270px;
 $top-button-ratio: $top-button-max-width / $max-width * 100 * 1%;
+$plus-button-size: 25px;
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -249,35 +253,23 @@ footer {
 .slider-header {
     position: relative;
     .plus-slider-button {
-        width: 25px;
-        height: 25px;
+        width: $plus-button-size;
+        height: $plus-button-size;
+        transform: translate($plus-button-size/-2, $plus-button-size/-2);
         position: absolute;
         background-image: url(../assets/info-btn.png);
         background-size: contain;
         &:hover {
             background-image: url(../assets/info-btn-hvr.png);
         }
+        &::after {
+            //preload hover image
+            content: "";
+            background-image: url(../assets/info-btn-hvr.png);
+            visibility: hidden;
+        }
     }
 }
-
-// &::before {
-//     content: "";
-//     position: absolute;
-//     border-top: 4px solid #fff;
-//     border-right: 4px solid #fff;
-//     left: 50%;
-//     width: 15%;
-//     height: 100%;
-// }
-// &::after {
-//     content: "";
-//     position: absolute;
-//     border-left: 4px solid #fff;
-//     border-top: 4px solid #fff;
-//     left: 50%;
-//     width: 15%;
-//     height: 100%;
-// }
 
 /*
 let startingCoords = [520, 799]
