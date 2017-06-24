@@ -2,7 +2,11 @@
 {% extends "layout.nunjucks" %} {% block content %}
 <div class="wrapper">
     <section class="top-section-biker">
-        <img src="assets/images/hero-image.jpg" alt="man biking in the woods" />
+        <picture>
+            <source media="(max-width: 480px)" srcset="assets/images/hero-image-small.jpg">
+            <source media="(max-width: 670px)" srcset="assets/images/hero-image-medium.jpg">
+            <img src="assets/images/hero-image.jpg" alt="man biking in the woods" />
+        </picture>
         <div class="top-section-button-wrapper">
             <div class="top-section-button trail-blazer">
                 <div>TRAIL BLAZER&emsp;<i class="fa fa-chevron-right"></i></div>
@@ -33,7 +37,11 @@
                 <div class="slide-title">Smith Bike Helmet</div>
             </div>
             {% endfor %}
-            <img src="assets/images/smith-two-bikes.jpg" alt="two individuals with bikes in front of a bike" />
+            <picture>
+                <source media="(max-width: 480px)" srcset="assets/images/smith-two-bikes-small.jpg">
+                <source media="(max-width: 670px)" srcset="assets/images/smith-two-bikes-medium.jpg">
+                <img src="assets/images/smith-two-bikes.jpg" alt="two individuals with bikes in front of a bike" />
+            </picture>
         </div>
 
         <div class="slider-container">
@@ -48,7 +56,11 @@
                     </div>
                     {% for slide in slidesData %}
                     <div class="slide-wrapper" data-slidePosition={{loop.index0}}>
-                        <img src="{{slide.src}}" alt="{{slide.alt}}" />
+                        <picture>
+                            <source media="(max-width: 480px)" srcset="{{slide.srcSmall}}">
+                            <source media="(max-width: 670px)" srcset="{{slide.srcMedium}}">
+                            <img src="{{slide.src}}" alt="{{slide.alt}}" />
+                        </picture>
                         <div class="descriptor-overlay">
                             <h4>Smith Overtake Helmet</h4>
                             <p>

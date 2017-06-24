@@ -65,12 +65,12 @@ gulp.task('images', function() {
         .pipe(responsive({
             // Resize all JPG images to two different sizes: 30% and 50%
             '*.jpg': [{
-                width: "30%",
+                width: "50%",
                 rename: {
                     suffix: '-small'
                 },
             }, {
-                width: "50%",
+                width: "70%",
                 rename: {
                     suffix: '-medium'
                 },
@@ -83,7 +83,7 @@ gulp.task('images', function() {
         }, {
             // Global configuration for all images
             // The output quality for JPEG, WebP and TIFF output formats
-            quality: 70,
+            quality: 100,
             // Use progressive (interlace) scan for JPEG and PNG output
             progressive: true,
             // Strip all metadata
