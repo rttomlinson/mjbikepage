@@ -26,8 +26,7 @@ gulp.task('nunjucks', function() {
 const gm = require('gulp-gm');
 gulp.task('gmImages', function() {
     gulp.src('raw-assets/images/*')
-
-    .pipe(gm(function(gmfile) {
+        .pipe(gm(function(gmfile) {
             return gmfile.setFormat('jpg');
         }, {
             imageMagick: true
@@ -37,11 +36,8 @@ gulp.task('gmImages', function() {
 
 gulp.task('gmLogos', function() {
     gulp.src('raw-assets/logos/*')
-
-    .pipe(gm(function(gmfile) {
-
+        .pipe(gm(function(gmfile) {
             return gmfile.setFormat('png');
-
         }, {
             imageMagick: true
         }))
@@ -74,12 +70,7 @@ gulp.task('images', function() {
                 rename: {
                     suffix: '-medium'
                 },
-            }, {
-                // Compress, strip metadata, and rename original image
-                // rename: {
-                //     suffix: '-original'
-                // },
-            }]
+            }, {}]
         }, {
             // Global configuration for all images
             // The output quality for JPEG, WebP and TIFF output formats
@@ -90,4 +81,18 @@ gulp.task('images', function() {
             withMetadata: false,
         }))
         .pipe(gulp.dest('public/assets/images/'));
+});
+
+//CSS prefixing
+
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+
+gulp.task('css', function () {
+    const plugins = [
+        autoprefixer()
+    ];
+    return gulp.src('./public/css/*.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest('./public/css/'));
 });

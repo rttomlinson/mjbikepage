@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-css": "node-sass scss/ --output public/css/ --watch",
-    "gulp": "node node_modules/.bin/gulp"
+    "build-css": "node-sass scss/ --output public/css/",
+    "gulp": "node_modules/.bin/gulp",
+    "build": "npm run gulp nunjucks && npm run gulp gmLogos && npm run gulp gmImages && npm run gulp gmMisc && npm run gulp images && npm run build-css && npm run gulp css"
   },
   "author": "Renzo Tomlinson",
   "license": "ISC",
@@ -15,11 +17,13 @@
     "normalize.scss": "^0.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-data": "^1.2.1",
     "gulp-gm": "0.0.8",
     "gulp-imagemin": "^3.3.0",
     "gulp-nunjucks-render": "^2.2.1",
+    "gulp-postcss": "^7.0.0",
     "gulp-responsive": "^2.7.1"
   }
 }
