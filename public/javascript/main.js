@@ -39,6 +39,8 @@ $(document).ready(function() {
             return;
         }
         transitionActive = true;
+        let nextSlidePosition = currentSlidePosition + 1;
+        updatePlusButtonActiveState(nextSlidePosition)
         ++currentSlidePosition;
         currentSliderOffset -= 50;
         moveToNewSlide();
@@ -49,6 +51,8 @@ $(document).ready(function() {
             return;
         }
         transitionActive = true;
+        let nextSlidePosition = currentSlidePosition - 1;
+        updatePlusButtonActiveState(nextSlidePosition)
         --currentSlidePosition;
         currentSliderOffset += 50;
         moveToNewSlide();
@@ -56,11 +60,12 @@ $(document).ready(function() {
     });
 
     $(".plus-slider-button").click(function(e) {
-        let nextSlidePosition = this.getAttribute('data-slideNum');
-        if (currentSlidePosition == nextSlidePosition || transitionActive) {
+        let nextSlidePosition = +this.getAttribute('data-slideNum');
+        if (currentSlidePosition === nextSlidePosition || transitionActive) {
             return;
         }
         transitionActive = true;
+        updatePlusButtonActiveState(nextSlidePosition)
         currentSlidePosition = nextSlidePosition;
         currentSliderOffset = -25 + (currentSlidePosition * -50);
         moveToNewSlide();
@@ -119,5 +124,17 @@ $(document).ready(function() {
             });
         togglePresentationalSlide();
     }
+    
+    function updatePlusButtonActiveState(newSlidePosition) {
+        //remove active from current slide
+        let $plusSliderButtons = $(".plus-slider-button");
+        console.log($plusSliderButtons[currentSlidePosition]);
+        $plusSliderButtons[currentSlidePosition].classList.remove("active-plus-button");
+        //add active to new slide
+        console.log("adding new slide position", newSlidePosition);
+        $plusSliderButtons[newSlidePosition].classList.add("active-plus-button");
+    }
+    
+    
 
 });

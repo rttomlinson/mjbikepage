@@ -548,21 +548,30 @@ footer .company-logos {
     height: 25px;
     transform: translate(-12.5px, -12.5px);
     position: absolute;
-    background-image: url(../assets/info-btn.png);
+    background-image: url("../assets/info-btn.png");
     background-size: contain; }
     .slider-header .plus-slider-button .slide-title {
       white-space: nowrap;
-      background-color: #fff;
+      background-color: #21abda;
       position: absolute;
-      display: none;
-      top: 100%; }
+      opacity: 0.01;
+      transition: opacity 0.3s;
+      padding: 3px;
+      top: -100%;
+      border-radius: 5px;
+      border: 1px solid #fff; }
     .slider-header .plus-slider-button:hover {
-      background-image: url(../assets/info-btn-hvr.png); }
+      background-image: url("../assets/info-btn-hvr.png");
+      z-index: 1; }
       .slider-header .plus-slider-button:hover .slide-title {
-        display: block; }
+        opacity: 1.0; }
+    .slider-header .plus-slider-button.active-plus-button {
+      background-image: url("../assets/info-btn-hvr.png"); }
+      .slider-header .plus-slider-button.active-plus-button .slide-title {
+        opacity: 1.0; }
     .slider-header .plus-slider-button::after {
       content: "";
-      background-image: url(../assets/info-btn-hvr.png);
+      background-image: url("../assets/info-btn-hvr.png");
       visibility: hidden; }
 
 /*

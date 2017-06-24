@@ -11,7 +11,7 @@ Handlebars.registerHelper('eachSliderButton', function(context, options) {
 
   return ret;
 });
-var source = "{{#eachSliderButton boxCoords}}<div data-slideNum={{slideNum}} style='left:{{left}}%; top:{{top}}%' class='plus-slider-button'></div>{{/eachSliderButton}}";
+var source = `{{#eachSliderButton boxCoords}}<div data-slideNum={{slideNum}} style='left:{{left}}%; top:{{top}}%' class='plus-slider-button'><div class="slide-title">Smith Bike Helmet</div></div>{{/eachSliderButton}}`;
 var template = Handlebars.compile(source);
 
 var data = {

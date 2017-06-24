@@ -30,9 +30,10 @@ $max-width: 960px;
 $top-button-max-width: 270px;
 $top-button-ratio: $top-button-max-width / $max-width * 100 * 1%;
 $plus-button-size: 25px;
-
-
-
+$more-details-color: #64b6d1;
+$plus-button-blue: #21abda;
+$info-btn: "../assets/info-btn.png";
+$info-btn-hvr: "../assets/info-btn-hvr.png";
 * {
     box-sizing: border-box;
 }
@@ -236,7 +237,7 @@ footer {
             line-height: 1.4;
             span {
                 font-size: 0.85em;
-                color: #64b6d1;
+                color: $more-details-color;
                 text-decoration: underline;
             }
         }
@@ -257,29 +258,41 @@ footer {
         height: $plus-button-size;
         transform: translate($plus-button-size/-2, $plus-button-size/-2);
         position: absolute;
-        background-image: url(../assets/info-btn.png);
+        background-image: url($info-btn);
         background-size: contain;
         .slide-title {
             white-space: nowrap;
-            background-color: #fff;
+            background-color: $plus-button-blue;
             position: absolute;
-            display: none;
-            top: 100%;
+            opacity: 0.01;
+            transition: opacity 0.3s;
+            padding: 3px;
+            top: -100%;
+            border-radius: 5px;
+            border: 1px solid #fff;
         }
         &:hover {
-            background-image: url(../assets/info-btn-hvr.png);
+            background-image: url($info-btn-hvr);
+            z-index: 1;
             .slide-title {
-                display: block;
+                opacity: 1.0;
+            }
+        }
+        &.active-plus-button {
+            background-image: url($info-btn-hvr);
+            .slide-title {
+                opacity: 1.0;
             }
         }
         &::after {
             //preload hover image
             content: "";
-            background-image: url(../assets/info-btn-hvr.png);
+            background-image: url($info-btn-hvr);
             visibility: hidden;
         }
     }
 }
+
 
 /*
 let startingCoords = [520, 799]
