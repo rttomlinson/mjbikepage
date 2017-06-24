@@ -31,7 +31,7 @@ $top-button-max-width: 270px;
 $top-button-ratio: $top-button-max-width / $max-width * 100 * 1%;
 $plus-button-size: 25px;
 $more-details-color: #64b6d1;
-$plus-button-blue: #21abda;
+$plus-button-blue: #54cff9;
 $info-btn: "../assets/info-btn.png";
 $info-btn-hvr: "../assets/info-btn-hvr.png";
 * {
@@ -131,12 +131,13 @@ section {
             white-space: nowrap;
             background-color: $plus-button-blue;
             position: absolute;
-            transform: scale(0, 1);
+            transform: scale(0, 0);
             transition: 0.3s;
             padding: 3px;
-            top: -100%;
+            left: 100%;
             border-radius: 5px;
-            border: 1px solid #fff;
+            border: 1px solid #000;
+            color: #fff;
         }
         &:hover {
             background-image: url($info-btn-hvr);
