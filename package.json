@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-css": "node-sass scss/ --output public/css/ --watch"
+    "watch-css": "node-sass scss/ --output public/css/ --watch",
+    "gulp": "node node_modules/.bin/gulp"
   },
   "author": "Renzo Tomlinson",
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.0.10",
     "normalize.scss": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-nunjucks-render": "^2.2.1"
   }
 }

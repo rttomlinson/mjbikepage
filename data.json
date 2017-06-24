@@ -1,0 +1,76 @@
+{
+    "boxCoords": [
+        [52.5, 35],
+        [63.13, 27.29],
+        [66.67, 43.86],
+        [74.17, 45.86],
+        [79.79, 52.14],
+        [52.81, 61.71],
+        [64.69, 81.14],
+        [26.77, 51.57],
+        [24.69, 5.14],
+        [19.48, 16.86],
+        [34.48, 11.29],
+        [28.23, 26.29],
+        [10.42, 29],
+        [19.48, 37.71]
+    ],
+    "shopButtons": ["SHOP HELMETS", "SHOP SUNGLASSES", "SHOP APPAREL", "SHOP HYDRATION", "SHOP STORAGE", "SHOP TOOLS", "SHOP LIGHTING", "SHOP TECH"],
+    "slidesData": [{
+        "src": "assets/smith-helmet-show.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/gopro-camera-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/lezyne-tool-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/smith-helmet-show.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/gopro-camera-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/lezyne-tool-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/smith-helmet-show.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/gopro-camera-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/lezyne-tool-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/smith-helmet-show.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/gopro-camera-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/lezyne-tool-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/smith-helmet-show.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }, {
+        "src": "assets/gopro-camera-1500-895.png",
+        "alt": "smith overtake helmet",
+        "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }]
+}
