@@ -79,7 +79,7 @@ gulp.task('images', function() {
                 // rename: {
                 //     suffix: '-original'
                 // },
-            }],
+            }]
         }, {
             // Global configuration for all images
             // The output quality for JPEG, WebP and TIFF output formats

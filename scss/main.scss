@@ -362,6 +362,10 @@ footer {
         left: 0%;
         transform: scale(1.0, 0.0);
         transition: 0.1s;
+        .descriptor-overlay {
+            top: 60%;
+            bottom: initial;
+        }
         &.active-presentational-slide {
             transform: scale(1.0, 1.0);
         }
