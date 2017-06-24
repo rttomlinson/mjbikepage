@@ -69,7 +69,11 @@ var slideData = {
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
-    src: "assets/smith-helmet-show.png",
+    src: "assets/gopro-camera-1500-895.png",
+    alt: "smith overtake helmet",
+    info: helmetInfo
+  }, {
+    src: "assets/lezyne-tool-1500-895.png",
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
@@ -77,7 +81,11 @@ var slideData = {
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
-    src: "assets/smith-helmet-show.png",
+    src: "assets/gopro-camera-1500-895.png",
+    alt: "smith overtake helmet",
+    info: helmetInfo
+  }, {
+    src: "assets/lezyne-tool-1500-895.png",
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
@@ -85,7 +93,11 @@ var slideData = {
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
-    src: "assets/smith-helmet-show.png",
+    src: "assets/gopro-camera-1500-895.png",
+    alt: "smith overtake helmet",
+    info: helmetInfo
+  }, {
+    src: "assets/lezyne-tool-1500-895.png",
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
@@ -93,7 +105,11 @@ var slideData = {
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
-    src: "assets/smith-helmet-show.png",
+    src: "assets/gopro-camera-1500-895.png",
+    alt: "smith overtake helmet",
+    info: helmetInfo
+  }, {
+    src: "assets/lezyne-tool-1500-895.png",
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
@@ -101,23 +117,7 @@ var slideData = {
     alt: "smith overtake helmet",
     info: helmetInfo
   }, {
-    src: "assets/smith-helmet-show.png",
-    alt: "smith overtake helmet",
-    info: helmetInfo
-  }, {
-    src: "assets/smith-helmet-show.png",
-    alt: "smith overtake helmet",
-    info: helmetInfo
-  }, {
-    src: "assets/smith-helmet-show.png",
-    alt: "smith overtake helmet",
-    info: helmetInfo
-  }, {
-    src: "assets/smith-helmet-show.png",
-    alt: "smith overtake helmet",
-    info: helmetInfo
-  }, {
-    src: "assets/smith-helmet-show.png",
+    src: "assets/gopro-camera-1500-895.png",
     alt: "smith overtake helmet",
     info: helmetInfo
   }]
@@ -126,3 +126,27 @@ var slideData = {
 var slideResult = slideTemplate(slideData);
 
 console.log(slideResult);
+console.log("\n\n\n\n");
+
+
+const shopButtons = { shopButtons: ["SHOP HELMETS", "SHOP SUNGLASSES", "SHOP APPAREL", "SHOP HYDRATION", "SHOP STORAGE", "SHOP TOOLS", "SHOP LIGHTING", "SHOP TECH"]};
+
+Handlebars.registerHelper('makeShopButtons', function(context, options) {
+  let ret = "";
+  for (let i = 0, j = context.length; i < j; i++) {
+    ret = ret + options.fn({
+      buttonText: context[i]
+    });
+  }
+
+  return ret;
+});
+
+const shopButtonHTML = `{{#makeShopButtons shopButtons}}<div class="site-button">
+                    <div>{{buttonText}}</div>
+                </div>{{/makeShopButtons}}`;
+let shopButtonTemplate = Handlebars.compile(shopButtonHTML);
+
+let shopButtonResult = shopButtonTemplate(shopButtons);
+
+console.log(shopButtonResult);

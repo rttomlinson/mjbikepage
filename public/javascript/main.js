@@ -20,8 +20,8 @@ $(document).ready(function() {
     /***********************
      * Set initial state of slider
      ***********************/
-    let slides = ["assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png", "assets/smith-helmet-show.png"];
-    let lastSlide = slides.length - 1;
+    let slideImages = getSlideImages();
+    let lastSlide = slideImages.length - 1;
     let currentSlidePosition = 0;
     //should pull this from the initial load
     let currentSliderOffset = -25;
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
     function changePresentationalSlideImage(e) {
         //change url reference of the presentationSlide, pull off corresponding active-slide
-        $($presentationalSlide.children("img")[0]).attr("src", slides[currentSlidePosition]);
+        $($presentationalSlide.children("img")[0]).attr("src", slideImages[currentSlidePosition]);
     }
 
     function moveSlider(e) {
@@ -128,11 +128,15 @@ $(document).ready(function() {
     function updatePlusButtonActiveState(newSlidePosition) {
         //remove active from current slide
         let $plusSliderButtons = $(".plus-slider-button");
-        console.log($plusSliderButtons[currentSlidePosition]);
         $plusSliderButtons[currentSlidePosition].classList.remove("active-plus-button");
         //add active to new slide
-        console.log("adding new slide position", newSlidePosition);
         $plusSliderButtons[newSlidePosition].classList.add("active-plus-button");
+    }
+    
+    function getSlideImages() {
+        return $.map($(".slides").find("img"), (img) => {
+            return img.src;
+        });
     }
     
     

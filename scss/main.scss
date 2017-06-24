@@ -118,30 +118,46 @@ section {
     }
 }
 
-footer {
-    .site-map {
-        background-image: url("../assets/site-map-bkg.png");
-        display: flex;
-        flex-wrap: wrap;
-        padding: 20px;
-        font-size: 0.8em;
-        .site-button {
-            text-align: center;
-            padding: 15px 20px;
-            width: 25%;
-            >div {
-                background: #000;
-                color: #fff;
-                padding: 15px 20px;
+.slider-header {
+    position: relative;
+    .plus-slider-button {
+        width: $plus-button-size;
+        height: $plus-button-size;
+        transform: translate($plus-button-size/-2, $plus-button-size/-2);
+        position: absolute;
+        background-image: url($info-btn);
+        background-size: contain;
+        .slide-title {
+            white-space: nowrap;
+            background-color: $plus-button-blue;
+            position: absolute;
+            transform: scale(0, 1);
+            transition: 0.3s;
+            padding: 3px;
+            top: -100%;
+            border-radius: 5px;
+            border: 1px solid #fff;
+        }
+        &:hover {
+            background-image: url($info-btn-hvr);
+            z-index: 1;
+            .slide-title {
+                opacity: 1.0;
+                transform: scale(1.0, 1.0);
             }
         }
-    }
-    .company-logos {
-        padding-left: 20px;
-        padding-right: 20px;
-        display: flex;
-        >div {
-            padding: 10px 20px 20px 20px;
+        &.active-plus-button {
+            background-image: url($info-btn-hvr);
+            .slide-title {
+                opacity: 1.0;
+                transform: scale(1.0, 1.0);
+            }
+        }
+        &::after {
+            //preload hover image
+            content: "";
+            background-image: url($info-btn-hvr);
+            visibility: hidden;
         }
     }
 }
@@ -174,6 +190,19 @@ footer {
                     visibility: hidden;
                 }
             }
+            .slider-end-piece {
+                background-image: url(../assets/lezyne-tool-1500-895.png);
+                background-size: contain;
+                &::before {
+                    content: "";
+                    background-color: #000;
+                    opacity: 0.6;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            
         }
     }
     .next-prev-button-wrapper {
@@ -219,6 +248,10 @@ footer {
         position: absolute;
         bottom: 0;
         color: #fff;
+        h4 {
+            margin: 10px;
+            font-size: 0.9em;
+        }
         &::before {
             background: black;
             content: "";
@@ -245,50 +278,36 @@ footer {
     &.active-presentational-slide {
         transform: scale(1.05);
         opacity: 1.0;
-        -webkit-box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75);
-        box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75);
+        box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75);
     }
 }
 
-.slider-header {
-    position: relative;
-    .plus-slider-button {
-        width: $plus-button-size;
-        height: $plus-button-size;
-        transform: translate($plus-button-size/-2, $plus-button-size/-2);
-        position: absolute;
-        background-image: url($info-btn);
-        background-size: contain;
-        .slide-title {
-            white-space: nowrap;
-            background-color: $plus-button-blue;
-            position: absolute;
-            opacity: 0.01;
-            transition: opacity 0.3s;
-            padding: 3px;
-            top: -100%;
-            border-radius: 5px;
-            border: 1px solid #fff;
-        }
-        &:hover {
-            background-image: url($info-btn-hvr);
-            z-index: 1;
-            .slide-title {
-                opacity: 1.0;
+footer {
+    .site-map {
+        background-image: url("../assets/site-map-bkg.png");
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        font-size: 0.8em;
+        .site-button {
+            text-align: center;
+            padding: 15px 20px;
+            width: 25%;
+            >div {
+                background: #000;
+                color: #fff;
+                padding: 15px 20px;
             }
         }
-        &.active-plus-button {
-            background-image: url($info-btn-hvr);
-            .slide-title {
-                opacity: 1.0;
-            }
-        }
-        &::after {
-            //preload hover image
-            content: "";
-            background-image: url($info-btn-hvr);
-            visibility: hidden;
+    }
+    .company-logos {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        >div {
+            padding: 10px 20px 20px 20px;
         }
     }
 }

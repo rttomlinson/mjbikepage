@@ -436,27 +436,40 @@ section {
     padding: 0 100px 40px 100px;
     font-family: "Lato", Helvetica, sans-serif; }
 
-footer .site-map {
-  background-image: url("../assets/site-map-bkg.png");
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  font-size: 0.8em; }
-  footer .site-map .site-button {
-    text-align: center;
-    padding: 15px 20px;
-    width: 25%; }
-    footer .site-map .site-button > div {
-      background: #000;
-      color: #fff;
-      padding: 15px 20px; }
-
-footer .company-logos {
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex; }
-  footer .company-logos > div {
-    padding: 10px 20px 20px 20px; }
+.slider-header {
+  position: relative; }
+  .slider-header .plus-slider-button {
+    width: 25px;
+    height: 25px;
+    transform: translate(-12.5px, -12.5px);
+    position: absolute;
+    background-image: url("../assets/info-btn.png");
+    background-size: contain; }
+    .slider-header .plus-slider-button .slide-title {
+      white-space: nowrap;
+      background-color: #21abda;
+      position: absolute;
+      transform: scale(0, 1);
+      transition: 0.3s;
+      padding: 3px;
+      top: -100%;
+      border-radius: 5px;
+      border: 1px solid #fff; }
+    .slider-header .plus-slider-button:hover {
+      background-image: url("../assets/info-btn-hvr.png");
+      z-index: 1; }
+      .slider-header .plus-slider-button:hover .slide-title {
+        opacity: 1.0;
+        transform: scale(1, 1); }
+    .slider-header .plus-slider-button.active-plus-button {
+      background-image: url("../assets/info-btn-hvr.png"); }
+      .slider-header .plus-slider-button.active-plus-button .slide-title {
+        opacity: 1.0;
+        transform: scale(1, 1); }
+    .slider-header .plus-slider-button::after {
+      content: "";
+      background-image: url("../assets/info-btn-hvr.png");
+      visibility: hidden; }
 
 .slider-container {
   position: relative; }
@@ -483,6 +496,16 @@ footer .company-logos {
           opacity: 0.4;
           color: white;
           visibility: hidden; }
+      .slider-container .slider-viewer .slides .slider-end-piece {
+        background-image: url(../assets/lezyne-tool-1500-895.png);
+        background-size: contain; }
+        .slider-container .slider-viewer .slides .slider-end-piece::before {
+          content: "";
+          background-color: #000;
+          opacity: 0.6;
+          position: absolute;
+          height: 100%;
+          width: 100%; }
   .slider-container .next-prev-button-wrapper {
     position: absolute;
     display: flex;
@@ -515,6 +538,9 @@ footer .company-logos {
     position: absolute;
     bottom: 0;
     color: #fff; }
+    .presentational-slide .descriptor-overlay h4 {
+      margin: 10px;
+      font-size: 0.9em; }
     .presentational-slide .descriptor-overlay::before {
       background: black;
       content: "";
@@ -537,42 +563,31 @@ footer .company-logos {
   .presentational-slide.active-presentational-slide {
     transform: scale(1.05);
     opacity: 1.0;
-    -webkit-box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 7px 15px 5px rgba(0, 0, 0, 0.75); }
+    -webkit-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.75); }
 
-.slider-header {
-  position: relative; }
-  .slider-header .plus-slider-button {
-    width: 25px;
-    height: 25px;
-    transform: translate(-12.5px, -12.5px);
-    position: absolute;
-    background-image: url("../assets/info-btn.png");
-    background-size: contain; }
-    .slider-header .plus-slider-button .slide-title {
-      white-space: nowrap;
-      background-color: #21abda;
-      position: absolute;
-      opacity: 0.01;
-      transition: opacity 0.3s;
-      padding: 3px;
-      top: -100%;
-      border-radius: 5px;
-      border: 1px solid #fff; }
-    .slider-header .plus-slider-button:hover {
-      background-image: url("../assets/info-btn-hvr.png");
-      z-index: 1; }
-      .slider-header .plus-slider-button:hover .slide-title {
-        opacity: 1.0; }
-    .slider-header .plus-slider-button.active-plus-button {
-      background-image: url("../assets/info-btn-hvr.png"); }
-      .slider-header .plus-slider-button.active-plus-button .slide-title {
-        opacity: 1.0; }
-    .slider-header .plus-slider-button::after {
-      content: "";
-      background-image: url("../assets/info-btn-hvr.png");
-      visibility: hidden; }
+footer .site-map {
+  background-image: url("../assets/site-map-bkg.png");
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  font-size: 0.8em; }
+  footer .site-map .site-button {
+    text-align: center;
+    padding: 15px 20px;
+    width: 25%; }
+    footer .site-map .site-button > div {
+      background: #000;
+      color: #fff;
+      padding: 15px 20px; }
+
+footer .company-logos {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex; }
+  footer .company-logos > div {
+    padding: 10px 20px 20px 20px; }
 
 /*
 let startingCoords = [520, 799]
