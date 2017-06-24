@@ -498,7 +498,7 @@ section {
           color: white;
           visibility: hidden; }
       .slider-container .slider-viewer .slides .slider-end-piece {
-        background-image: url(../assets/images/lezyne-tool.jpg);
+        background-image: url("../assets/images/lezyne-tool.jpg");
         background-size: contain; }
         .slider-container .slider-viewer .slides .slider-end-piece::before {
           content: "";

@@ -34,6 +34,9 @@ $more-details-color: #64b6d1;
 $plus-button-blue: #54cff9;
 $info-btn: "../assets/info-btn.png";
 $info-btn-hvr: "../assets/info-btn-hvr.png";
+$slider-end-piece-placeholder: "../assets/images/lezyne-tool.jpg";
+$site-map-background-image: "../assets/site-map-bkg.png";
+
 * {
     box-sizing: border-box;
 }
@@ -192,7 +195,7 @@ section {
                 }
             }
             .slider-end-piece {
-                background-image: url(../assets/images/lezyne-tool.jpg);
+                background-image: url($slider-end-piece-placeholder);
                 background-size: contain;
                 &::before {
                     content: "";
@@ -286,7 +289,7 @@ section {
 
 footer {
     .site-map {
-        background-image: url("../assets/site-map-bkg.png");
+        background-image: url($site-map-background-image);
         display: flex;
         flex-wrap: wrap;
         padding: 20px;
