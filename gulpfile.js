@@ -76,9 +76,9 @@ gulp.task('images', function() {
                 },
             }, {
                 // Compress, strip metadata, and rename original image
-                rename: {
-                    suffix: '-original'
-                },
+                // rename: {
+                //     suffix: '-original'
+                // },
             }],
         }, {
             // Global configuration for all images

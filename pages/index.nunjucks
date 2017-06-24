@@ -2,7 +2,7 @@
 {% extends "layout.nunjucks" %} {% block content %}
 <div class="wrapper">
     <section class="top-section-biker">
-        <img src="assets/hero-image-touch.jpg" alt="man biking in the woods" />
+        <img src="assets/images/hero-image.jpg" alt="man biking in the woods" />
         <div class="top-section-button-wrapper">
             <div class="top-section-button trail-blazer">
                 <div>TRAIL BLAZER&emsp;<i class="fa fa-chevron-right"></i></div>
@@ -11,7 +11,7 @@
                 <div>COMMUTER&emsp;<i class="fa fa-chevron-right"></i></div>
             </div>
             <div class="t-divider">
-                <img src="assets/top-biker-divider.jpg" />
+                <img src="assets/top-biker-divider.png" />
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 <div class="slide-title">Smith Bike Helmet</div>
             </div>
             {% endfor %}
-            <img src="assets/smith-two-bikes-crop-overlay-960x700.jpg" alt="two individuals with bikes in front of a bike" />
+            <img src="assets/images/smith-two-bikes.jpg" alt="two individuals with bikes in front of a bike" />
         </div>
 
         <div class="slider-container">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="presentational-slide active-presentational-slide">
-                <img src="assets/smith-helmet-show.jpg" alt="smith overtake helmet" />
+                <img src="assets/images/smith-helmet.jpg" alt="smith overtake helmet" />
                 <div class="descriptor-overlay">
                     <h4>Smith Overtake Helmet</h4>
                     <p>

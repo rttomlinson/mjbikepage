@@ -5,7 +5,7 @@
 5. Ask questions about browser support, psd
 6. Add fonts
 7. Prevent transitionevents from firing twice https://www.iambacon.co.uk/blog/prevent-transitionend-event-firing-twice
-8. Reduce file transfer size from ~5-6mb to 1.6mb.
+8. Reduce file transfer size from ~5-6mb to 1.6mb --> 1.1mb.
 
 
 
