@@ -17,6 +17,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-data": "^1.2.1",
+    "gulp-gm": "0.0.8",
+    "gulp-imagemin": "^3.3.0",
     "gulp-nunjucks-render": "^2.2.1"
   }
 }

@@ -21,3 +21,39 @@ gulp.task('nunjucks', function() {
         // output files in app folder
         .pipe(gulp.dest('./public'));
 });
+
+const imagemin = require('gulp-imagemin');
+
+gulp.task('imagemin', () =>
+    gulp.src('raw-assets/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('public/assets/'))
+);
+
+const gm = require('gulp-gm');
+
+gulp.task('gmImages', function() {
+    gulp.src('raw-assets/images/*')
+
+    .pipe(gm(function(gmfile) {
+
+        return gmfile.setFormat('jpg');
+
+    }, {
+        imageMagick: true
+    }))
+    .pipe(gulp.dest('public/assets/'));
+});
+
+gulp.task('gmLogos', function() {
+    gulp.src('raw-assets/logos/*')
+
+    .pipe(gm(function(gmfile) {
+
+        return gmfile.setFormat('png');
+
+    }, {
+        imageMagick: true
+    }))
+    .pipe(gulp.dest('public/assets/'));
+});
