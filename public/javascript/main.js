@@ -35,27 +35,31 @@ $(document).ready(function() {
      *********************/
 
     $('.slider-next').click(function() {
-        if (currentSlidePosition === lastSlide || transitionActive) {
+        if (transitionActive) {
             return;
         }
-        transitionActive = true;
-        let nextSlidePosition = currentSlidePosition + 1;
-        updatePlusButtonActiveState(nextSlidePosition)
-        ++currentSlidePosition;
-        currentSliderOffset -= 50;
-        moveToNewSlide();
+        let nextSlidePosition;
+        if (currentSlidePosition === lastSlide) {
+            nextSlidePosition = 0;
+        }
+        else {
+            nextSlidePosition = currentSlidePosition + 1;
+        }
+        slideTransition(nextSlidePosition);
 
     });
     $('.slider-prev').click(function() {
-        if (currentSlidePosition === 0 || transitionActive) {
+        if (transitionActive) {
             return;
         }
-        transitionActive = true;
-        let nextSlidePosition = currentSlidePosition - 1;
-        updatePlusButtonActiveState(nextSlidePosition)
-        --currentSlidePosition;
-        currentSliderOffset += 50;
-        moveToNewSlide();
+        let nextSlidePosition;
+        if (currentSlidePosition === 0) {
+            nextSlidePosition = lastSlide;
+        }
+        else {
+            nextSlidePosition = currentSlidePosition - 1;
+        }
+        slideTransition(nextSlidePosition);
 
     });
 
@@ -64,12 +68,9 @@ $(document).ready(function() {
         if (currentSlidePosition === nextSlidePosition || transitionActive) {
             return;
         }
-        transitionActive = true;
-        updatePlusButtonActiveState(nextSlidePosition)
-        currentSlidePosition = nextSlidePosition;
-        currentSliderOffset = -25 + (currentSlidePosition * -50);
-        moveToNewSlide();
-        
+        slideTransition(nextSlidePosition);
+
+
     });
 
 
@@ -87,8 +88,8 @@ $(document).ready(function() {
         $($presentationalSlide.children("img")[0]).attr("src", slideImages[currentSlidePosition]);
     }
 
-    function moveSlider(e) {
-        setTranslateX($slides, currentSliderOffset);
+    function moveSlider(newPosition) {
+        setTranslateX($slides, newPosition);
     }
 
     function togglePresentationalSlide() {
@@ -107,12 +108,12 @@ $(document).ready(function() {
             $slides.one(transEndEventName, resolve);
         });
     }
-    
-    function moveToNewSlide() {
+
+    function moveToNewSlide(newPosition) {
         addListenerForPresentationSlideFade()
             .then(() => {
                 changePresentationalSlideImage();
-                moveSlider();
+                moveSlider(newPosition);
                 return addListenerForSlideTransitionFinish();
             })
             .then(() => {
@@ -124,7 +125,7 @@ $(document).ready(function() {
             });
         togglePresentationalSlide();
     }
-    
+
     function updatePlusButtonActiveState(newSlidePosition) {
         //remove active from current slide
         let $plusSliderButtons = $(".plus-slider-button");
@@ -132,13 +133,19 @@ $(document).ready(function() {
         //add active to new slide
         $plusSliderButtons[newSlidePosition].classList.add("active-plus-button");
     }
-    
+
     function getSlideImages() {
         return $.map($(".slides").find("img"), (img) => {
             return img.src;
         });
     }
-    
-    
+
+    function slideTransition(nextSlidePosition) {
+        transitionActive = true;
+        updatePlusButtonActiveState(nextSlidePosition)
+        currentSlidePosition = nextSlidePosition;
+        currentSliderOffset = -25 + (currentSlidePosition * -50);
+        moveToNewSlide(currentSliderOffset);
+    }
 
 });
