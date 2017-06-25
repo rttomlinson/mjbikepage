@@ -93,27 +93,11 @@
             {% endfor %}
         </div>
         <div class="company-logos">
+            {% for companyLogo in companyLogos %}
             <div>
-                <img src="assets/brand-gopro.png" alt="gopro logo" />
+                <img src="{{companyLogo.src}}" alt="{{companyLogo.alt}}" />
             </div>
-            <div>
-                <img src="assets/brand-smith.png" alt="smith logo" />
-            </div>
-            <div>
-                <img src="assets/brand-platypus.png" alt="platypus logo" />
-            </div>
-            <div>
-                <img src="assets/brand-camelbak.png" alt="camelbak logo" />
-            </div>
-            <div>
-                <img src="assets/brand-lezyne.png" alt="lezyne logo" />
-            </div>
-            <div>
-                <img src="assets/brand-serfas.png" alt="serfas logo" />
-            </div>
-            <div>
-                <img src="assets/brand-zoic.png" alt="zoic logo" />
-            </div>
+            {% endfor %}
         </div>
     </footer>
 </div>

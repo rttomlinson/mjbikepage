@@ -445,6 +445,8 @@ section {
     position: absolute;
     background-image: url("../assets/info-btn.png");
     background-size: contain; }
+    .slider-header .plus-slider-button:active {
+      transform: translate(-12.5px, -14.5px); }
     .slider-header .plus-slider-button .slide-title {
       white-space: nowrap;
       background-color: #54cff9;
@@ -453,6 +455,7 @@ section {
       transition: 0.3s;
       padding: 3px;
       left: 100%;
+      top: -100%;
       border-radius: 5px;
       border: 1px solid #000;
       color: #fff; }
@@ -522,6 +525,10 @@ section {
       z-index: 1; }
       .slider-container .next-prev-button-wrapper .slider-button:hover, .slider-container .next-prev-button-wrapper .next-slider-button:hover, .slider-container .next-prev-button-wrapper .prev-slider-button:hover {
         cursor: pointer; }
+    .slider-container .next-prev-button-wrapper .next-slider-button:active {
+      transform: translateX(3px); }
+    .slider-container .next-prev-button-wrapper .prev-slider-button:active {
+      transform: translateX(-3px); }
 
 .presentational-slide {
   position: absolute;
@@ -634,15 +641,3 @@ footer .company-logos {
   footer .company-logos > div {
     width: 50%;
     padding: 10px 20px 20px 20px; } }
-
-/*
-let startingCoords = [520, 799]
-let coords = [[757, 835], [707, 917], [851, 878], [791, 983], [620, 1002], [707, 1063], [777, 1160], [1024, 1044], [1126, 990], [1160, 1106], [1232, 1120], [1286, 1164], [1141, 1367], [1028, 1231]]
-function relativeStart(originalCoords, relativeCoords) {
-    return relativeCoords.map((coords) => {
-        return [coords[0] - originalCoords[0], coords[1] - originalCoords[1]]
-    });
-}
-
-let coordsPercents = [[52.5,35],[63.13,27.29],[66.67,43.86],[74.17,45.86],[79.79,52.14],[52.81,61.71],[64.69,81.14],[26.77,51.57],[24.69,5.14],[19.48,16.86],[34.48,11.29],[28.23,26.29],[10.42,29],[19.48,37.71]]
-*/

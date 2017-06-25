@@ -100,5 +100,33 @@
         "srcMedium": "assets/images/gopro-camera-medium.jpg",
         "alt": "smith overtake helmet",
         "info": "As classic as a little black dress, the women's Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style."
+    }],
+    "companyLogos": [{
+        "src": "assets/brand-gopro.png",
+        "alt": "gopro logo"
+    },
+    {
+        "src": "assets/brand-smith.png",
+        "alt": "smith logo"
+    },
+    {
+        "src": "assets/brand-platypus.png",
+        "alt": "platypus logo"
+    },
+    {
+        "src": "assets/brand-camelbak.png",
+        "alt": "camelbak logo"
+    },
+    {
+        "src": "assets/brand-lezyne.png",
+        "alt": "lezyne logo"
+    },
+    {
+        "src": "assets/brand-serfas.png",
+        "alt": "serfas logo"
+    },
+    {
+        "src": "assets/brand-zoic.png",
+        "alt": "zoic logo"
     }]
 }
