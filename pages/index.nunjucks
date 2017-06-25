@@ -33,7 +33,7 @@
     <section>
         <div class='slider-header'>
             {% for boxCoord in boxCoords %}
-            <div data-slideNum={{loop.index0}} style='left:{{boxCoord[0]}}%; top:{{boxCoord[1]}}%' class='plus-slider-button'>
+            <div data-slideNum={{loop.index0}} class='plus-slider-button button-{{loop.index0}}'>
                 <div class="slide-title">Smith Bike Helmet</div>
             </div>
             {% endfor %}

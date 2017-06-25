@@ -1,5 +1,11 @@
 // @import './node_modules/normalize.scss/normalize';
 @import './imports/normalize.scss';
+@import './imports/plusButtonCoords.scss';
+@mixin buttonOffset($X, $Y, $buttonSize) {
+    left: $X;
+    top: $Y;
+}
+
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
@@ -131,12 +137,9 @@ section {
     .plus-slider-button {
         width: $plus-button-size;
         height: $plus-button-size;
-        transform: translate($plus-button-size/-2, $plus-button-size/-2);
         position: absolute;
-        background-image: url($info-btn);
-        background-size: contain;
         &:active {
-            transform: translate($plus-button-size/-2, ($plus-button-size/-2) - 2);
+            transform: translateY(-2px);
         }
         .slide-title {
             white-space: nowrap;
@@ -145,25 +148,43 @@ section {
             transform: scale(0, 0);
             transition: 0.3s;
             padding: 3px;
-            left: 100%;
-            top: -100%;
+            left: 50%;
+            top: -150%;
             border-radius: 5px;
             border: 1px solid #000;
             color: #fff;
         }
+        &::before {
+            content: "";
+            background-image: url($info-btn);
+            position: absolute;
+            left: $plus-button-size / -2;
+            top: $plus-button-size / -2;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+        }
         &:hover {
-            background-image: url($info-btn-hvr);
-            z-index: 1;
             .slide-title {
                 opacity: 1.0;
                 transform: scale(1.0, 1.0);
+                z-index: 999;
+            }
+            &::before {
+                background-image: url($info-btn-hvr);
+
             }
         }
         &.active-plus-button {
-            background-image: url($info-btn-hvr);
             .slide-title {
                 opacity: 1.0;
                 transform: scale(1.0, 1.0);
+                z-index: 99;
+            }
+            &::before {
+                background-image: url($info-btn-hvr);
+
             }
         }
         &::after {
@@ -171,6 +192,77 @@ section {
             content: "";
             background-image: url($info-btn-hvr);
             visibility: hidden;
+
+        }
+        &.button-0 {
+            @include buttonOffset($button0X,
+            $button0Y,
+            $plus-button-size);
+        }
+        &.button-1 {
+            @include buttonOffset($button1X,
+            $button1Y,
+            $plus-button-size);
+        }
+        &.button-2 {
+            @include buttonOffset($button2X,
+            $button2Y,
+            $plus-button-size);
+        }
+        &.button-3 {
+            @include buttonOffset($button3X,
+            $button3Y,
+            $plus-button-size);
+        }
+        &.button-4 {
+            @include buttonOffset($button4X,
+            $button4Y,
+            $plus-button-size);
+        }
+        &.button-5 {
+            @include buttonOffset($button5X,
+            $button5Y,
+            $plus-button-size);
+        }
+        &.button-6 {
+            @include buttonOffset($button6X,
+            $button6Y,
+            $plus-button-size);
+        }
+        &.button-7 {
+            @include buttonOffset($button7X,
+            $button7Y,
+            $plus-button-size);
+        }
+        &.button-8 {
+            @include buttonOffset($button8X,
+            $button8Y,
+            $plus-button-size);
+        }
+        &.button-9 {
+            @include buttonOffset($button9X,
+            $button9Y,
+            $plus-button-size);
+        }
+        &.button-10 {
+            @include buttonOffset($button10X,
+            $button10Y,
+            $plus-button-size);
+        }
+        &.button-11 {
+            @include buttonOffset($button11X,
+            $button11Y,
+            $plus-button-size);
+        }
+        &.button-12 {
+            @include buttonOffset($button12X,
+            $button12Y,
+            $plus-button-size);
+        }
+        &.button-13 {
+            @include buttonOffset($button13X,
+            $button13Y,
+            $plus-button-size);
         }
     }
 }
