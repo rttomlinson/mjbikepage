@@ -14,7 +14,7 @@ Gulp - Task Runner
 Data for building HTML is in data.json
 
 Notes:
-1. Add normalize.css
+1. Add normalize.scss
 2. Building out basic HTML and CSS/JS dirs
 3. Install Sass
 4. Break apart mock
