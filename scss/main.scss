@@ -36,7 +36,6 @@ $info-btn: "../assets/info-btn.png";
 $info-btn-hvr: "../assets/info-btn-hvr.png";
 $slider-end-piece-placeholder: "../assets/images/lezyne-tool.jpg";
 $site-map-background-image: "../assets/site-map-bkg.png";
-
 * {
     box-sizing: border-box;
 }
@@ -234,11 +233,17 @@ section {
             &:active {
                 transform: translateX(3px);
             }
+            &:hover {
+                color: #6cfc95;
+            }
         }
         .prev-slider-button {
             @extend .slider-button;
             &:active {
                 transform: translateX(-3px);
+            }
+            &:hover {
+                color: #ff6868;
             }
         }
     }
@@ -302,14 +307,24 @@ footer {
         flex-wrap: wrap;
         padding: 20px;
         font-size: 0.8em;
-        .site-button {
-            text-align: center;
-            padding: 15px 20px;
+        a {
             width: 25%;
-            >div {
-                background: #000;
-                color: #fff;
+            text-decoration: none;
+            .site-button {
+                text-align: center;
                 padding: 15px 20px;
+                >div {
+                    background: #000;
+                    color: #fff;
+                    padding: 15px 20px;
+                    transition: .3s;
+                    &:hover {
+                        background: #ddd;
+                        color: #000;
+                        box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75);
+                        transform: translate(-3px, -3px);
+                    }
+                }
             }
         }
     }
@@ -365,9 +380,9 @@ footer {
     }
     .slider-container {
         position: relative;
-            .slides {
-                visibility: hidden;
-            }
+        .slides {
+            visibility: hidden;
+        }
     }
     .presentational-slide {
         width: 100%;

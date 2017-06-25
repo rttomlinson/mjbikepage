@@ -15,7 +15,31 @@
         [10.42, 29],
         [19.48, 37.71]
     ],
-    "shopButtons": ["SHOP HELMETS", "SHOP SUNGLASSES", "SHOP APPAREL", "SHOP HYDRATION", "SHOP STORAGE", "SHOP TOOLS", "SHOP LIGHTING", "SHOP TECH"],
+    "shopButtons": [{
+        "text": "SHOP HELMETS",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Bike-Helmets____"
+    }, {
+        "text": "SHOP SUNGLASSES",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Sunglasses____"
+    }, {
+        "text": "SHOP APPAREL",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Moosejaw-Clothing____"
+    }, {
+        "text": "SHOP HYDRATION",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Hydration-Packs____"
+    }, {
+        "text": "SHOP STORAGE",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Storage____"
+    }, {
+        "text": "SHOP TOOLS",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Camp-Tools____"
+    }, {
+        "text": "SHOP LIGHTING",
+        "link": "https://www.moosejaw.com/moosejaw/shop/search_Lighting____"
+    }, {
+        "text": "SHOP TECH",
+        "link": "https://www.moosejaw.com/moosejaw/shop/content_jobs____"
+    }],
     "slidesData": [{
         "src": "assets/images/smith-helmet.jpg",
         "srcSmall": "assets/images/smith-helmet-small.jpg",
@@ -104,28 +128,22 @@
     "companyLogos": [{
         "src": "assets/brand-gopro.png",
         "alt": "gopro logo"
-    },
-    {
+    }, {
         "src": "assets/brand-smith.png",
         "alt": "smith logo"
-    },
-    {
+    }, {
         "src": "assets/brand-platypus.png",
         "alt": "platypus logo"
-    },
-    {
+    }, {
         "src": "assets/brand-camelbak.png",
         "alt": "camelbak logo"
-    },
-    {
+    }, {
         "src": "assets/brand-lezyne.png",
         "alt": "lezyne logo"
-    },
-    {
+    }, {
         "src": "assets/brand-serfas.png",
         "alt": "serfas logo"
-    },
-    {
+    }, {
         "src": "assets/brand-zoic.png",
         "alt": "zoic logo"
     }]

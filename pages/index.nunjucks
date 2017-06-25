@@ -78,7 +78,7 @@
                 <div class="descriptor-overlay">
                     <h4>Smith Overtake Helmet</h4>
                     <p>
-                        As classic as a little black dress, the women&#x27;s Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style. <span>More Details</span>
+                        As classic as a little black dress, the women&#x27;s Smith Arrival Snow Helmet delivers the proven fit and function you expect from a Smith helmet, all with a ladylike polish and style. <a href="https://www.moosejaw.com/moosejaw/shop/product_Smith-Overtake-Helmet_10287424_10208_10000001_-1_"><span>More Details</span></a>
                     </p>
                 </div>
             </div>
@@ -87,9 +87,11 @@
     <footer>
         <div class="site-map">
             {% for shopButton in shopButtons %}
-            <div class="site-button">
-                <div>{{shopButton}}</div>
-            </div>
+            <a href="{{shopButton.link}}">
+                <div class="site-button">
+                    <div>{{shopButton.text}}</div>
+                </div>
+            </a>
             {% endfor %}
         </div>
         <div class="company-logos">
