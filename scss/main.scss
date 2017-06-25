@@ -77,6 +77,12 @@ section {
             color: #fff;
             border: 3px solid #fff;
             position: relative;
+            transition: .3s;
+            &:hover {
+                color: white;
+                background: #eee;
+                transform: translateY(-2px);
+            }
             >div {
                 position: relative;
             }
