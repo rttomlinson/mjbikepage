@@ -11,6 +11,13 @@ package.json has scripts for running gulp tasks
 Full-build automation with "npm run build"
 Additional scripts can be viewed in the gulpfile.js and package.json
 
+pages and templates are for the html templates (nunjucks templating engine)
+sass contains the sass files
+raw-assets are the original image/asset files before any resizing or optimization
+data.json contains the information used to generate the html
+gulpfile.js and package.json show some of the tooling used in automating the build process
+
+
 
 Tools:
 JQuery
@@ -20,6 +27,8 @@ Gulp - Task Runner
 ImageMagik
 -----------------------------
 Data for building HTML is in data.json
+
+
 
 
 Future exploration:
