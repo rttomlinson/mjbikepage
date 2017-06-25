@@ -1,8 +1,15 @@
-Page is hosted at http://mjbikes.surge.sh/
-Github for build files at https://github.com/rttomlinson/mjbikepage
+Site is hosted at http://mjbikes.surge.sh/
+To see build files on Github visit https://github.com/rttomlinson/mjbikepage
+
+To run this website locally, navigate to the public directory and open index.html
+The public directory contains all the necssary files for this site to work offline and is the directory that is hosted on http://mjbikes.surge.sh/
+
+This project was designed for screen size of at least 960px, but also has some scaling capabilities. Resize the browser or visit the site on your phone!
+Additionally, images were resized to respond to screen width and optimized to decrease total file transfer size.
 
 package.json has scripts for running gulp tasks
 Full-build automation with "npm run build"
+Additional scripts can be viewed in the gulpfile.js and package.json
 
 
 Tools:
@@ -10,8 +17,25 @@ JQuery
 Sass
 Nunjucks for HTML Templating (templates and pages directory)
 Gulp - Task Runner
+ImageMagik
 -----------------------------
 Data for building HTML is in data.json
+
+
+Future exploration:
+
+* Front-end Frameworks
+* Babel - As browser support requires
+* Explore Shims and Polyfills - As browser support requires
+* Modernizer - As browser support requires
+* Minifying/Uglifying code
+* SVG logos and buttons
+* Setting up automated cross-browser Javascript testing https://philipwalton.com/articles/learning-how-to-set-up-automated-cross-browser-javascript-unit-testing/
+
+
+Thank you for looking over this project and please let me know if you have any questions.
+
+Project Notes:
 
 Notes:
 1. Add normalize.scss
@@ -26,12 +50,3 @@ Notes:
 11. Build process is automated via gulp
 
 
-Future exploration:
-
-* Front-end Frameworks
-* Babel - As browser support requires
-* Explore Shims and Polyfills - As browser support requires
-* Modernizer - As browser support requires
-* Minifying/Uglifying code
-* SVG logos and buttons
-* Setting up automated cross-browser Javascript testing https://philipwalton.com/articles/learning-how-to-set-up-automated-cross-browser-javascript-unit-testing/
