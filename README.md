@@ -5,8 +5,6 @@ package.json has scripts for running gulp tasks
 Full-build automation with "npm run build"
 
 
-
-
 Tools:
 JQuery
 Sass
