@@ -354,9 +354,11 @@ footer {
     }
     footer {
         .site-map {
-            .site-button {
-                padding: 15px 20px;
+            a {
                 width: 50%;
+                .site-button {
+                    padding: 15px 20px;
+                }
             }
         }
         .company-logos {
@@ -400,10 +402,12 @@ footer {
     footer {
         .site-map {
             font-size: 1.2em;
-            .site-button {
-                text-align: center;
-                padding: 5px 10px;
+            a {
                 width: 100%;
+                .site-button {
+                    text-align: center;
+                    padding: 5px 10px;
+                }
             }
         }
         .company-logos {
