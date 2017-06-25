@@ -1,7 +1,7 @@
 // @import './node_modules/normalize.scss/normalize';
 @import './imports/normalize.scss';
 @import './imports/plusButtonCoords.scss';
-@mixin buttonOffset($X, $Y, $buttonSize) {
+@mixin buttonOffset($X, $Y) {
     left: $X;
     top: $Y;
 }
@@ -196,73 +196,59 @@ section {
         }
         &.button-0 {
             @include buttonOffset($button0X,
-            $button0Y,
-            $plus-button-size);
+            $button0Y);
         }
         &.button-1 {
             @include buttonOffset($button1X,
-            $button1Y,
-            $plus-button-size);
+            $button1Y);
         }
         &.button-2 {
             @include buttonOffset($button2X,
-            $button2Y,
-            $plus-button-size);
+            $button2Y);
         }
         &.button-3 {
             @include buttonOffset($button3X,
-            $button3Y,
-            $plus-button-size);
+            $button3Y);
         }
         &.button-4 {
             @include buttonOffset($button4X,
-            $button4Y,
-            $plus-button-size);
+            $button4Y);
         }
         &.button-5 {
             @include buttonOffset($button5X,
-            $button5Y,
-            $plus-button-size);
+            $button5Y);
         }
         &.button-6 {
             @include buttonOffset($button6X,
-            $button6Y,
-            $plus-button-size);
+            $button6Y);
         }
         &.button-7 {
             @include buttonOffset($button7X,
-            $button7Y,
-            $plus-button-size);
+            $button7Y);
         }
         &.button-8 {
             @include buttonOffset($button8X,
-            $button8Y,
-            $plus-button-size);
+            $button8Y);
         }
         &.button-9 {
             @include buttonOffset($button9X,
-            $button9Y,
-            $plus-button-size);
+            $button9Y);
         }
         &.button-10 {
             @include buttonOffset($button10X,
-            $button10Y,
-            $plus-button-size);
+            $button10Y);
         }
         &.button-11 {
             @include buttonOffset($button11X,
-            $button11Y,
-            $plus-button-size);
+            $button11Y);
         }
         &.button-12 {
             @include buttonOffset($button12X,
-            $button12Y,
-            $plus-button-size);
+            $button12Y);
         }
         &.button-13 {
             @include buttonOffset($button13X,
-            $button13Y,
-            $plus-button-size);
+            $button13Y);
         }
     }
 }
