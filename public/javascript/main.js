@@ -20,12 +20,12 @@ $(document).ready(function() {
     /***********************
      * Set initial state of slider
      ***********************/
+     
+    //retrieve image urls for all images in the slider
     let slideImages = getSlideImages();
     let lastSlide = slideImages.length - 1;
     let currentSlidePosition = 0;
-    //should pull this from the initial load
     let currentSliderOffset = -25;
-    //attached event listener to slider-next button
     let transitionActive = false;
     let $slides = $('.slides');
     let $presentationalSlide = $('.presentational-slide');
@@ -46,8 +46,8 @@ $(document).ready(function() {
             nextSlidePosition = currentSlidePosition + 1;
         }
         slideTransition(nextSlidePosition);
-
     });
+    
     $('.slider-prev').click(function() {
         if (transitionActive) {
             return;
@@ -60,7 +60,6 @@ $(document).ready(function() {
             nextSlidePosition = currentSlidePosition - 1;
         }
         slideTransition(nextSlidePosition);
-
     });
 
     $(".plus-slider-button").click(function(e) {
@@ -69,8 +68,6 @@ $(document).ready(function() {
             return;
         }
         slideTransition(nextSlidePosition);
-
-
     });
 
 
@@ -142,7 +139,7 @@ $(document).ready(function() {
 
     function slideTransition(nextSlidePosition) {
         transitionActive = true;
-        updatePlusButtonActiveState(nextSlidePosition)
+        updatePlusButtonActiveState(nextSlidePosition);
         currentSlidePosition = nextSlidePosition;
         currentSliderOffset = -25 + (currentSlidePosition * -50);
         moveToNewSlide(currentSliderOffset);

@@ -2,7 +2,6 @@ var gulp = require('gulp');
 const nunjucksRender = require('gulp-nunjucks-render');
 const data = require('gulp-data');
 
-
 gulp.task('default', function() {
     // place code for your default task here
 });
@@ -43,6 +42,7 @@ gulp.task('gmLogos', function() {
         }))
         .pipe(gulp.dest('public/assets/'));
 });
+
 //move left over images
 gulp.task('gmMisc', function() {
     gulp.src('raw-assets/*.{png,jpg}')
@@ -73,7 +73,6 @@ gulp.task('images', function() {
             }, {}]
         }, {
             // Global configuration for all images
-            // The output quality for JPEG, WebP and TIFF output formats
             quality: 100,
             // Use progressive (interlace) scan for JPEG and PNG output
             progressive: true,
@@ -84,7 +83,6 @@ gulp.task('images', function() {
 });
 
 //CSS prefixing
-
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
