@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-css": "node-sass scss/ --output public/css/ --watch",
-    "build-css": "node-sass scss/ --output public/css/",
+    "build-css": "node-sass scss/*.scss --output public/css/",
     "gulp": "node_modules/.bin/gulp",
     "build": "npm run gulp nunjucks && npm run gulp gmLogos && npm run gulp gmImages && npm run gulp gmMisc && npm run gulp images && npm run build-css && npm run gulp css"
   },
